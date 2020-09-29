@@ -1,0 +1,132 @@
+#page-landing {
+    background: var(--color-primary);
+}
+
+#page-landing #container {
+    color: var(--color-text-in-primary);
+}
+
+.logo-container img{
+    height: 10rem;
+}
+
+.logo-container {
+    text-align: center; /* Alinha o texto onde for especificado */
+    margin-bottom: 3.2rem; /* Margem para o container que contem a logo */
+}
+
+.logo-container h2 {
+    font-weight: 500; /* Peso da fonte/grossura */
+    font-size: 3.6rem; /* Tamanho da fonte */
+    line-height: 4.6rem; /* Altura da linha do texto */
+    margin-top: 0.8rem; /* Espaçamento de margem no topo */
+}
+
+.front-image {
+    width: 100%;
+}
+
+.buttons-container{
+    display: flex; /* Deixa os itens ao lado um do outro */
+    justify-content:center;
+    margin: 3.2rem 0;
+}
+
+.buttons-container a{
+    width: 30rem;
+    height: 10.4rem;
+
+    border-radius: 0.8rem; /* arredonda as bordas */
+    margin-right: 1.6rem;
+
+    font: 700 2.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none; /* Decoração do texto (none retira underlines e etc) */
+
+    color: var(--color-button-text); /* Entregando a cor definida na variável */
+
+    transition: background 0.2s; /* Aplica transição, no caso específico, aplica no hiperlink */
+}
+
+.buttons-container a img {
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+
+.buttons-container a.study { /* o container button recebe o hiperlink a que recebe a classe study */
+    background: var(--color-primary-lighter);
+}
+
+.buttons-container a.study:hover { /* hover significa que somente irá ser aplicado quando o botão estiver com o mouse em cima */
+    background: var(--color-primary-light);
+}
+
+.buttons-container a.give-classes {
+    background: var(--color-secondary);
+    margin-right: 0;
+}
+
+.buttons-container a.give-classes:hover {
+    background: var(--color-secondary-dark);
+}
+
+.total-connections {
+    font-size: 1.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-connections img {
+    margin-left: 1rem;
+}
+
+@media (max-width: 699px){
+    :root{
+        font-size: 40%;
+    }
+}
+
+@media (min-width: 1100px) { /* A partir daqui, a tela muda para desktop */
+    #page-landing #container {
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr; /* O template das colunas do grid */
+        grid-template-rows: 350px 1fr; /* O template das linhas do grid */
+        grid-template-areas: 
+        "proffy image image"
+        "button button texting";
+        gap: 87px; /* Afasta um pouco as coisas em volta */
+    }
+
+    .logo-container{
+        grid-area: proffy;
+        text-align: initial;
+        align-self: center; /* Se posiciona dentro do grid */
+    }
+
+    .logo-container img{
+        height: 127px;
+    }
+
+    .front-image{
+        grid-area: image;
+        height: 350px;
+    }
+
+    .buttons-container{
+        grid-area: button;
+        justify-content: flex-start;
+    }
+
+    .total-connections{
+        grid-area: texting;
+        justify-self: end;
+        font-size: 1.2rem;
+    }
+}

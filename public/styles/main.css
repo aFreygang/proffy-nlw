@@ -1,0 +1,69 @@
+/* CSS - Cascading Style Sheets */ 
+
+:root {
+    /* Variáveis */
+    --color-background: #F0F0F7; /* os 2 tracinhos -- são para definir variáveis */
+    --color-primary-lighter:#059e05;
+    --color-primary-light:#039103;
+    --color-primary: #008000;
+    --color-primary-dark: #016101;
+    --color-primary-darker:#014d01;
+    --color-secondary: #8257E5;
+    --color-secondary-dark: #774DD6;
+    --color-title-in-primary: #ffffff;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #E6E6F0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #ffffff;
+    --color-box-base: #ffffff;
+    --color-box-footer: #FAFAFC;
+    --color-small-info: #C1BCCC;
+
+    /* tamanho da fonte (padrão: 16px - 100% - 1rem) */
+    font-size: 60%; /* controle das medidas rem */
+} 
+/* :root é o elemento raiz do html inteiro */
+/* rem é relativo ao tamanho de fonte escolhida no root */
+/* pixels não são relativos, porcentagem e rem são relativos */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100vh; /* vh é view height, ou seja a altura que estamos vendo */
+    }
+
+    body {
+        background: var(--color-background);
+        display: flex;
+        align-items: center;
+        justify-content: center; /* justifica o conteudo ao centro */
+    }
+
+    body,
+    input,
+    button,
+    textarea {
+        font: 500 1.6rem Poppins;
+        /* font-weight: 500;
+        font-family: Poppins;
+        font-size: 1.6rem; */ /* Também pode ser feito assim */
+        color: var(--color-text-base);
+    } 
+
+    #container {
+        width: 90vw; /*largura*/
+        max-width: 700px; /* Vai no máximo até 700 pixels de largura, independente do dispositivo */
+    }
+
+    @media (min-width: 700px) {
+        :root{
+            font-size: 62.5%; /* Todo 1rem vai ser relativo a 10px */
+        }
+    }

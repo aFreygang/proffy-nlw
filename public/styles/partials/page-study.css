@@ -1,0 +1,205 @@
+#page-study #container {
+    width: 100vw; /* Altura e Largura */
+    height: 100vh;
+}
+
+#search-teachers { /* Aumentando margem do topo da box search teachers */
+    margin-top: 3.2rem;
+}
+
+#search-teachers label { /* Cor alterada da fonte */
+    color: var(--color-text-in-primary);
+}
+
+#search-teachers .select-block { /* Aumentando margem do rodapé da box search teachers */
+    margin-bottom: 1.4rem;
+}
+
+#search-teachers button {
+    width: 100%; /* aumenta a largura da caixa do botão filtrar */
+    height: 5.6rem; /* aumenta a altura da caixa do botão filtrar */
+    background: var(--color-secondary); /* Alterando a cor do fundo do botão */
+    color: var(--color-button-text); /* Alterando a cor do texto do botão */
+    border: 0;
+    border-radius: .8rem; /* Arredondando as bordas do botão */
+    cursor: pointer; /* Alterando o cursor sobre o botão */
+    font: 700 1.6rem Archivo; /* Alterando características da fonte no botão */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centralizando o botão para mover junto com a proporção da tela */
+    text-decoration: none;
+    transition: background 0.2s; /* Transição do Background */
+    margin-top: 3.2rem; /* Margem para o topo do botão */
+}
+
+#search-teachers button:hover { /* Transição quando passar o mouse por cima */
+    background-color: var(--color-secondary-dark);
+}
+
+#page-study main { /* Afastando as informações da header */
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+.teacher-item { /* Criando a box em volta da informação do professor */
+    background-color: var(--color-box-base);
+    border: 1px solid var(--color-line-in-white);
+    border-radius: .8rem;
+    margin-top: 2.4rem;
+}
+
+.teacher-item header { /* Melhorando a box em volta do professor */
+    padding: 3.2rem 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.teacher-item header img { /* Configurando a imagem do professor */
+    width: 8rem;
+    height: 8rem; /* Ajustando o tamanho da imagem */
+    border-radius: 50%; /* Transformando a imagem quadrada em redonda */
+}
+
+.teacher-item header div {
+    margin-left: 2.4rem;
+}
+
+.teacher-item header div strong {
+    font:700 2.4rem Archivo;
+    display: block; /* Fazendo o nome ocupar uma linha inteira */
+    color: var(--color-text-title);
+}
+
+.teacher-item header div span {
+    font-size: 1.6rem;
+    display: block; /* Fazendo a matéria ocupar uma linha inteira */
+    margin-top: .4rem; /* Só é possível colocar margem quando o display é block, não inline */
+}
+
+.teacher-item > p { /* Posicionando a descrição do professor */
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+}
+
+.teacher-item footer { 
+    padding: 3.2rem 2rem;
+    background-color: var(--color-box-footer);
+    border-top: 1px solid var(--color-line-in-white);
+    margin-top: 3.2rem;
+
+    display: flex; /* Colocando um elemento ao lado do outro */
+    align-items: center; /* Alinhando eles ao centro do eixo x */
+    justify-content: space-between /* Jogando um elemento pra cada canto */
+    ;
+}
+
+.teacher-item footer p { /* Formatando texto do Preço do professor */
+    font-size: 1.4rem;
+    line-height: 2.4rem; /* Altura da linha */
+    color: var(--color-text-complement);
+}
+
+.teacher-item footer p strong { /* Formatando o texto do valor, deixando mais chamativo e colocando ele em uma linha única */
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    display: block;
+}
+
+.teacher-item footer .button { /* Formatando o botão por completo */
+    width: 20rem;
+    height: 5.6rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: .8rem;
+    cursor: pointer;
+    font: 700 1.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    text-decoration: none;
+
+    transition: background 0.2s;
+    margin-left: 1.6rem;
+}
+
+.teacher-item footer .button:hover {
+    background: var(--color-secondary-dark);
+}
+
+@media (min-width: 700px) {
+    #page-study #container{
+        max-width: 100vw;
+    }
+
+    .page-header {
+        height: 340px;
+    }
+    
+    .page-header .top-bar-container {
+        max-width: 1100px
+    }
+
+    .page-header .header-content {
+        max-width: 740px;
+
+        margin: 0 auto;
+
+        flex: 1 1;
+        padding-bottom: 48px;
+        display: inline;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .page-header .header-content strong {
+        max-width: 350px;
+    }
+
+    .teacher-item header,
+    .teacher-item footer {
+        padding: 32px;
+    }
+
+    #search-teachers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        position: absolute;
+        bottom: -28px;
+    }
+
+    #page-study main {
+        padding: 32px 0;
+        max-width: 740px;
+        margin: 0 auto;
+    }
+
+    #search-teachers .select-block {
+        margin-bottom: 0;
+    }
+
+    .teacher-item > p {
+        padding: 0 32px;
+    }
+
+    .teacher-item footer p strong {
+        display: initial;
+        margin-left: 16px;
+    }
+
+    .teacher-item footer button {
+        width: 245px;
+        font-size: 16px;
+        justify-content: center;
+        font-weight: 600;
+    }
+
+    .teacher-item footer button img {
+        margin-right: 16px;
+    }
+}
