@@ -1,0 +1,120 @@
+<!-- <!DOCTYPE html> É necessário começar com essa tag -->
+<!-- <html></html> Isso é uma tag HTML -->
+<!-- Na tag HEAD irá as configurações do meu documento -->
+<!-- Na tag BODY irá todo o conteúdo visível da página -->
+<!--
+     HTML
+        HyperText
+            Deixa de ser um texto simples para um texto poderoso. Ex: Enviar para outra página e etc
+
+        Markup
+
+        Language
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="pt_br"> <!-- lang é um atributo, no caso específico serve para escolher a linguagem -->
+<head>
+
+
+    <meta charset="UTF-8"> <!-- charset serve para escolher o caractere utilizado -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Serve para que consigamos adaptar o documento para telas maiores ou menores -->
+    <meta name="theme-color" content="#8257E5">
+
+    <title> O Proffy [Plataforma de estudos online] </title> <!-- É o título da página, que enxergamos na guia -->
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="/styles/main.css"> <!-- href é a url, onde está o folder do css -->
+    <link rel="stylesheet" href="/styles/partials/header.css">
+    <link rel="stylesheet" href="/styles/partials/forms.css">
+    <link rel="stylesheet" href="/styles/partials/page-study.css">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+
+</head>
+<body id="page-study">
+
+    <div id="container">
+        <header class="page-header"> <!-- Cabeçalho da página -->
+
+            <div class="top-bar-container"> <!-- Voltar e logo -->
+                <a href="/">
+                <img src="images/icons/back.svg" alt="Voltar">
+                </a>
+                <a href="/">
+                <img src="images/logo.svg" alt="Proffy">
+                </a>
+            </div>
+
+            <div class="header-content"> <!-- Conteúdo do cabeçalho -->
+                <strong>Estes são os educadores disponíveis</strong> <!-- Aplicando negrito e fonte -->
+
+                <form id="search-teachers"> <!-- Formulário -->
+                    <div class="select-block"> <!-- Escolher Matéria -->
+                        <label for="subject">Matéria</label> <!-- O que significa o campo -->
+                        <select name="subject" id="subject"> <!-- Procura aonde está o campo que foi nomeado na tag label -->
+
+                            {%for subject in subjects %}
+                            <option value="{{loop.index}}" {{ "selected" if filters.subject == loop.index }}>{{subject}}</option> <!-- Opções com valores e significados -->
+                            {%endfor%}
+                            <option value="" disabled="" hidden="" >Selecione uma opção</option> <!-- Com o disabled significa que o campo não será uma opção para escolher -->
+                            
+
+                        </select> <!-- Tag para selecionar em uma lista uma opção -->
+                    </div>
+                    <div class="select-block"> <!-- Escolher dia da semana -->
+                        <label for="weekday">Dia da semana</label>
+                        <select name="weekday" id="weekday">
+
+                            {%for weekday in weekdays %}
+                            <option value="{{loop.index}}" {{ "selected" if filters.weekday == loop.index }}>{{weekday}}</option> <!-- Opções com valores e significados -->
+                            {%endfor%}
+
+                            <option value="" disabled="" hiden=""></option>
+
+                        </select>
+                    </div>
+                    <div class="input-block"> <!-- Selecionar o horário -->
+                        <label for="time">Horário</label>
+                        <input name="time" id= "time" type="time" value="{{filters.time}}">
+                    </div>
+                    <button type="submit">Filtrar</button> <!-- Botão de enviar -->
+                </form>
+            </div>
+        </header>
+
+        <main> <!-- Conteúdo principal da página -->
+
+            {%for proffy in proffys %} <!-- Puxando do back-end informações do professor -->
+            <article class="teacher-item">  <!-- Professor -->
+                <header> <!-- Imagem, nome e matéria do professor -->
+                    <img src="{{proffy.avatar}}" alt="{{proffy.name}}"> 
+                    <div>
+                        <strong>{{proffy.name}}</strong>
+                        <span>{{proffy.subject}}</span>
+                    </div>
+                </header>
+
+                <p>{{proffy.bio}}</p> <!-- Descrição do professor -->
+            
+                <footer>
+
+                    <p>Preço/hora <strong>R$ {{proffy.cost}}</strong></p>
+
+                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.whatsapp}}&text= Tenho interesse em seus serviços de {{proffy.subject}}, {{proffy.name}}" class="button" target="_blank">
+                    
+                        <img src="/images/icons/whatsapp.svg" alt="whatsapp">Entrar em contato
+                    </a>
+                </footer>
+            </article>
+            {%endfor%}
+
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html> É necessário começar com essa tag -->
+<!-- <html></html> Isso é uma tag HTML -->
+<!-- Na tag HEAD irá as configurações do meu documento -->
+<!-- Na tag BODY irá todo o conteúdo visível da página -->
+<!--
+     HTML
+        HyperText
+            Deixa de ser um texto simples para um texto poderoso. Ex: Enviar para outra página e etc
+
+        Markup
+
+        Language
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="pt_br"> <!-- lang é um atributo, no caso específico serve para escolher a linguagem -->
+<head>
+
+
+    <meta charset="UTF-8"> <!-- charset serve para escolher o caractere utilizado -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Serve para que consigamos adaptar o documento para telas maiores ou menores -->
+    <meta name="theme-color" content="#8257E5">
+
+    <title> O Proffy [Plataforma de estudos online] </title> <!-- É o título da página, que enxergamos na guia -->
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png"> <!-- Adicionando ícone na guia -->
+
+    <link rel="stylesheet" href="/styles/main.css"> <!-- href é a url, onde está o folder do css -->
+    <link rel="stylesheet" href="/styles/partials/page-landing.css">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+
+</head>
+<body id="page-landing">
+
+    <div id="container">
+    
+        <div class="logo-container">
+            <img src="/images/logo.svg" alt="Proffy">
+            <h2>Encontre seu educador ideal aqui</h2>
+        </div>
+
+        <img class= "front-image" src="/images/landing.svg" alt="Educador online">
+
+        <!-- Dentro de tags podem ser colocados atributos, que são basicamente configurações do que vai aparecer na tag -->
+
+        <!-- <img src="" alt="Logo"> src é a origem de onde vem a imagem e alt é uma "segunda opção", porém, escrita (muito boa para deficientes visuais) -->
+
+        <div class="buttons-container"> <!-- Botões -->
+            <a class="study" href="/study">
+                <img src="/images/icons/study.svg" alt="Estudar"> Estudar
+            </a>
+            <a class="give-classes" href="/give-classes">
+                <img src="/images/icons/give-classes.svg" alt="Dar Aulas"> Dar Aulas
+            </a>
+        </div>
+    
+        <p class="total-connections"> <!-- Parágrafo -->
+            Total de 0 conexões já realizadas
+            <img src="images/icons/purple-heart.svg" alt="Coração roxo">
+        </p>
+    </div>
+    
+
+
+</body>
+</html>
